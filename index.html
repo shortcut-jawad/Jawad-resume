@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Jawad — Full Stack Engineer</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f9f8f4;
+      --text: #1a1a18;
+      --muted: #6b6b66;
+      --border: #d4d2c9;
+      --accent: #2a2a28;
+      --link: #1a5fa8;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      font-size: 15px;
+      line-height: 1.75;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    .page {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: lowercase;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: normal;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .tagline {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 13px;
+      margin-bottom: 3rem;
+    }
+
+    .contacts a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .contacts a:hover { text-decoration: underline; }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 0 2.5rem;
+    }
+
+    section { margin-bottom: 3rem; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: lowercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    p { margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    .entry { margin-bottom: 2rem; }
+    .entry:last-child { margin-bottom: 0; }
+
+    .entry-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+      margin-bottom: 0.2rem;
+    }
+
+    .entry-title {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .entry-date {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .entry-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .entry-links {
+      display: flex;
+      gap: 14px;
+      font-size: 13px;
+      margin-bottom: 0.5rem;
+    }
+
+    .entry-links a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .entry-links a:hover { text-decoration: underline; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 0.6rem;
+    }
+
+    .tag {
+      font-size: 11.5px;
+      color: var(--muted);
+      background: #eceae3;
+      padding: 2px 9px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .entry-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .skills-grid {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .skill-row {
+      display: flex;
+      gap: 12px;
+      font-size: 13.5px;
+      align-items: baseline;
+    }
+
+    .skill-label {
+      width: 100px;
+      flex-shrink: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .skill-val {
+      color: var(--text);
+    }
+
+    footer {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <p class="eyebrow">resume / 2026</p>
+
+  <h1>Muhammad<br>Jawad</h1>
+  <p class="tagline">Full Stack Engineer &nbsp;·&nbsp; Node.js · PostgreSQL · Cloud</p>
+
+  <div class="contacts">
+    <a href="mailto:jawad.shakeel2004@gmail.com">jawad.shakeel2004@gmail.com</a>
+    <span>+92 322-7598516</span>
+    <a href="https://www.linkedin.com/in/jawad-shakeel" target="_blank">linkedin</a>
+    <a href="https://github.com/shortcut-jawad" target="_blank">github</a>
+  </div>
+
+  <hr>
+
+  <section>
+    <p class="section-label">about</p>
+    <p>
+      Full Stack Engineer graduating from LUMS in May 2026, with hands-on experience
+      building production-ready web applications and data-driven systems. I care about
+      clean architecture, responsive UIs, and backends that don't fall apart when things
+      get complicated.
+    </p>
+    <p>
+      I've built interactive React/Next.js frontends, scalable Node.js APIs, and applied
+      machine learning to real datasets — and taken projects end-to-end with CI/CD pipelines,
+      Docker, and Kubernetes. Outside engineering, I have been teaching maths for the last four years.
+    </p>
+  </section>
+
+  <hr>
+
+  <section>
+    <p class="section-label">education</p>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Lahore University of Management Sciences</span>
+        <span class="entry-date">Aug 2022 – May 2026</span>
+      </div>
+      <p class="entry-sub">BS Computer Science &nbsp;·&nbsp; Minor in Mathematics</p>
+      <p class="entry-desc">
+        Data Structures · Algorithms · Operating Systems · Databases ·
+        Machine Learning · Software Engineering · Applied Probability ·
+        Advanced Programming · Automata · Cloud Development
+      </p>
+    </div>
+  </section>
+
+  <hr>
+
+  <section>
+    <p class="section-label">projects</p>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Agentic Tool Harness (FYP)</span>
+        <span class="entry-date">Sep 2025 – Feb 2026</span>
+      </div>
+      <div class="entry-links">
+        <a href="http://46.225.10.148:9998" target="_blank">live ↗</a>
+        <a href="https://github.com/Usman-Sajid313/AgenticTestHarness_SPROJ" target="_blank">github ↗</a>
+      </div>
+      <div class="tags">
+        <span class="tag">Next.js</span>
+        <span class="tag">LLM APIs</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Linux</span>
+      </div>
+      <p class="entry-desc">
+        Sandboxed evaluation harness for tool-using LLM agents — tests tool discovery,
+        correct invocation, and multi-step reasoning on long-horizon tasks. Built an
+        introspection layer that logs tool calls, parameters, and decision traces for
+        reproducible experiments. Provider-agnostic pipelines support multiple LLM APIs
+        with configurable scoring via Jest-style unit tests and LLM-based judges.
+      </p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Serenely</span>
+        <span class="entry-date">Sep 2025 – Dec 2025</span>
+      </div>
+      <div class="entry-links">
+        <a href="https://se-gp-8-git-prod-umzs-projects.vercel.app/" target="_blank">live ↗</a>
+        <a href="https://github.com/Um3rz/Serenely" target="_blank">github ↗</a>
+      </div>
+      <div class="tags">
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Django</span>
+        <span class="tag">PostgreSQL</span>
+      </div>
+      <p class="entry-desc">
+        AI-driven mental health web platform offering 24/7 chatbot assistance and
+        anonymous peer forums. Built the full-stack system with authentication,
+        role-based access control, and secure storage of anonymized interactions.
+        Led creation of a detailed Software Design Specification covering architecture,
+        performance, reliability, and safety requirements.
+      </p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">ColorGrid</span>
+        <span class="entry-date">Mar 2025 – Apr 2025</span>
+      </div>
+      <div class="entry-links">
+        <a href="https://gridgame01.vercel.app/" target="_blank">live ↗</a>
+        <a href="https://github.com/shortcut-jawad/a3-shortcut-jawad-main" target="_blank">github ↗</a>
+      </div>
+      <div class="tags">
+        <span class="tag">TypeScript</span>
+        <span class="tag">Vite</span>
+        <span class="tag">Express</span>
+        <span class="tag">Socket.IO</span>
+        <span class="tag">MongoDB</span>
+      </div>
+      <p class="entry-desc">Competitive two-player real-time game where players expand colored regions on a
+        shared grid to practice strategic thinking and pattern recognition. Full-stack
+        architecture deployed via Vercel and Render, handling game state persistence and
+        real-time updates for multiple concurrent matches.
+      </p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Urdu News Classifier</span>
+        <span class="entry-date">Sep 2024 – Dec 2024</span>
+      </div>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">scikit-learn</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">NLP</span>
+      </div>
+      <p class="entry-desc">
+        Automated classifier for Urdu news articles, labeling topics such as sports and
+        entertainment. Scraped and preprocessed 1,000+ articles from local sources,
+        then implemented and compared multiple NLP models — covering text cleaning,
+        feature engineering, and model evaluation.
+      </p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">E-commerce Demand Forecasting</span>
+        <span class="entry-date">Sep 2024 – Dec 2024</span>
+      </div>
+      <div class="entry-links">
+        <a href="https://medium.com/@abdulrafey16504/pakistans-largest-e-commerce-dataset-e4c7a0aa0c04?postPublishedType=initial" target="_blank">article ↗</a>
+        <a href="https://github.com/Rafey16504/E-commerce-DataModel" target="_blank">github ↗</a>
+      </div>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Random Forest</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">Matplotlib</span>
+      </div>
+      <p class="entry-desc">
+        Forecasted high-performing product categories using Pakistan's largest public
+        e-commerce dataset — hundreds of thousands of transaction records. Cleaned and
+        explored large-scale transactional data, engineered features, and trained Random
+        Forest models to identify top-performing categories and key demand drivers.
+      </p>
+    </div>
+
+  </section>
+
+  <hr>
+
+  <section>
+    <p class="section-label">skills</p>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <span class="skill-label">Languages</span>
+        <span class="skill-val">JavaScript / TypeScript · Python · C++</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Frontend</span>
+        <span class="skill-val">React · Next.js · HTML · CSS</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Backend</span>
+        <span class="skill-val">Node.js · REST APIs · Django</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Databases</span>
+        <span class="skill-val">MongoDB · PostgreSQL · SQL · Supabase</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">ML / Data</span>
+        <span class="skill-val">scikit-learn · Pandas · NumPy · Matplotlib</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">DevOps</span>
+        <span class="skill-val">Git · Vercel · Render · CI/CD · Docker · Kubernetes · SonarQube</span>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section>
+    <p class="section-label">teaching</p>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Teaching Assistant — LUMS</span>
+        <span class="entry-date">Sep 2023 – Feb 2026</span>
+      </div>
+      <p class="entry-desc">
+        Three TAships across Calculus I, Linear Algebra, and Probability (twice).
+        Led weekly tutorials for 40+ students, created and graded quizzes, and
+        invigilated exams for cohorts of ~180.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Muhammad Jawad · <a href="mailto:jawad.shakeel2004@gmail.com">jawad.shakeel2004@gmail.com</a> · LUMS CS '26
+  </footer>
+
+</div>
+</body>
+</html>
