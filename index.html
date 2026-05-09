@@ -3,222 +3,437 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Jawad — Resume</title>
+  <title>Muhammad Jawad — Full Stack Engineer</title>
   <style>
-    @page { size: letter; margin: 0.48in 0.58in; }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg: #f9f8f4;
+      --text: #1a1a18;
+      --muted: #6b6b66;
+      --border: #d4d2c9;
+      --accent: #2a2a28;
+      --link: #1a5fa8;
+    }
+
     body {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 10pt;
-      line-height: 1.38;
-      color: #000;
-      background: #fff;
-      padding: 0.48in 0.58in;
-      max-width: 8.5in;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      font-size: 15px;
+      line-height: 1.75;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    .page {
+      max-width: 640px;
       margin: 0 auto;
     }
 
-    @media print { body { padding: 0; } }
-
-    /* ── HEADER ── */
-    .header { text-align: center; margin-bottom: 5pt; }
-    h1 { font-size: 19pt; font-weight: bold; letter-spacing: 0.01em; margin-bottom: 2pt; }
-    .contact { font-size: 9pt; line-height: 1.6; }
-    .contact a { color: #1a5fa8; text-decoration: none; }
-    .pipe { color: #555; margin: 0 3pt; }
-
-    /* ── SECTION ── */
-    .section { margin-top: 6pt; }
-    .section-title {
-      font-size: 10pt;
-      font-weight: bold;
-      text-transform: uppercase;
+    .eyebrow {
+      font-size: 12px;
+      color: var(--muted);
       letter-spacing: 0.06em;
-      border-bottom: 0.75pt solid #000;
-      padding-bottom: 1pt;
-      margin-bottom: 4pt;
+      text-transform: lowercase;
+      margin-bottom: 2rem;
     }
 
-    /* ── ENTRY ── */
-    .entry { margin-bottom: 4.5pt; }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: normal;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+
+    .tagline {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      font-size: 13px;
+      margin-bottom: 3rem;
+    }
+
+    .contacts a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .contacts a:hover { text-decoration: underline; }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 0 2.5rem;
+    }
+
+    section { margin-bottom: 3rem; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: lowercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    p { margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    .entry { margin-bottom: 2rem; }
     .entry:last-child { margin-bottom: 0; }
 
-    .entry-head {
+    .entry-header {
       display: flex;
-      justify-content: space-between;
       align-items: baseline;
-      gap: 8pt;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+      margin-bottom: 0.2rem;
     }
 
-    .entry-left { font-weight: bold; font-size: 10pt; }
-    .entry-left a { color: #1a5fa8; font-weight: normal; font-size: 9pt; text-decoration: none; }
-    .entry-left em { font-weight: normal; }
-    .entry-right { font-size: 9pt; white-space: nowrap; flex-shrink: 0; }
+    .entry-title {
+      font-size: 15px;
+      font-weight: bold;
+    }
 
-    .entry-sub { font-style: italic; font-size: 9.5pt; margin-top: 0.5pt; margin-bottom: 1pt; }
+    .entry-date {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
 
-    ul { margin: 2pt 0 0 13pt; }
-    li { font-size: 9.5pt; line-height: 1.38; margin-bottom: 1.5pt; }
-    li:last-child { margin-bottom: 0; }
+    .entry-sub {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
 
-    /* ── SKILLS ── */
-    .skill-row { display: flex; font-size: 9.5pt; margin-bottom: 2pt; line-height: 1.4; }
-    .skill-row:last-child { margin-bottom: 0; }
-    .skill-label { font-weight: bold; min-width: 105pt; flex-shrink: 0; }
+    .entry-links {
+      display: flex;
+      gap: 14px;
+      font-size: 13px;
+      margin-bottom: 0.5rem;
+    }
 
-    /* ── SUMMARY ── */
-    .summary { font-size: 9.5pt; line-height: 1.42; }
+    .entry-links a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .entry-links a:hover { text-decoration: underline; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 0.6rem;
+    }
+
+    .tag {
+      font-size: 11.5px;
+      color: var(--muted);
+      background: #eceae3;
+      padding: 2px 9px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .entry-desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .skills-grid {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .skill-row {
+      display: flex;
+      gap: 12px;
+      font-size: 13.5px;
+      align-items: baseline;
+    }
+
+    .skill-label {
+      width: 100px;
+      flex-shrink: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .skill-val {
+      color: var(--text);
+    }
+
+    footer {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
   </style>
 </head>
 <body>
+<div class="page">
 
-<!-- HEADER -->
-<div class="header">
-  <h1>Muhammad Jawad</h1>
-  <div class="contact">
-    DHA, Lahore Cantt. 54792, Lahore, Pakistan<br>
-    +92 322-7598516
-    <span class="pipe">|</span>
+  <p class="eyebrow">resume / 2026</p>
+
+  <h1>Muhammad<br>Jawad</h1>
+  <p class="tagline">Full Stack Engineer &nbsp;·&nbsp; Node.js · PostgreSQL · Cloud</p>
+
+  <div class="contacts">
     <a href="mailto:jawad.shakeel2004@gmail.com">jawad.shakeel2004@gmail.com</a>
-    <span class="pipe">|</span>
-    <a href="https://www.linkedin.com/in/jawad-shakeel" target="_blank">linkedin.com/in/jawad-shakeel</a>
-    <span class="pipe">|</span>
-    <a href="https://github.com/shortcut-jawad" target="_blank">github.com/shortcut-jawad</a>
+    <span>+92 322-7598516</span>
+    <a href="https://www.linkedin.com/in/jawad-shakeel" target="_blank">linkedin</a>
+    <a href="https://github.com/shortcut-jawad" target="_blank">github</a>
   </div>
+
+  <hr>
+
+  <section>
+    <p class="section-label">about</p>
+    <p>
+      Full Stack Engineer graduating from LUMS in May 2026, with hands-on experience
+      building production-ready web applications and data-driven systems. I care about
+      clean architecture, responsive UIs, and backends that don't fall apart when things
+      get complicated.
+    </p>
+    <p>
+      I've built interactive React/Next.js frontends, scalable Node.js APIs, and applied
+      machine learning to real datasets — and taken projects end-to-end with CI/CD pipelines,
+      Docker, and Kubernetes. Outside engineering, I have been teaching maths for the last four years.
+    </p>
+  </section>
+
+  <hr>
+
+  <section>
+    <p class="section-label">education</p>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Lahore University of Management Sciences</span>
+        <span class="entry-date">Aug 2022 – May 2026</span>
+      </div>
+      <p class="entry-sub">BS Computer Science &nbsp;·&nbsp; Minor in Mathematics</p>
+      <p class="entry-desc">
+        Data Structures · Algorithms · Operating Systems · Databases ·
+        Machine Learning · Software Engineering · Applied Probability ·
+        Advanced Programming · Automata · Cloud Development
+      </p>
+    </div>
+  </section>
+
+  <hr>
+
+  <section>
+    <p class="section-label">projects</p>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Agentic Tool Harness (FYP)</span>
+        <span class="entry-date">Sep 2025 – Feb 2026</span>
+      </div>
+      <div class="entry-links">
+        <a href="http://46.225.10.148:9998" target="_blank">live ↗</a>
+        <a href="https://github.com/Usman-Sajid313/AgenticTestHarness_SPROJ" target="_blank">github ↗</a>
+      </div>
+      <div class="tags">
+        <span class="tag">Next.js</span>
+        <span class="tag">LLM APIs</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Linux</span>
+      </div>
+      <p class="entry-desc">
+        Sandboxed evaluation harness for tool-using LLM agents — tests tool discovery,
+        correct invocation, and multi-step reasoning on long-horizon tasks. Built an
+        introspection layer that logs tool calls, parameters, and decision traces for
+        reproducible experiments. Provider-agnostic pipelines support multiple LLM APIs
+        with configurable scoring via Jest-style unit tests and LLM-based judges.
+      </p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Serenely</span>
+        <span class="entry-date">Sep 2025 – Dec 2025</span>
+      </div>
+      <div class="entry-links">
+        <a href="https://se-gp-8-git-prod-umzs-projects.vercel.app/" target="_blank">live ↗</a>
+        <a href="https://github.com/Um3rz/Serenely" target="_blank">github ↗</a>
+      </div>
+      <div class="tags">
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Django</span>
+        <span class="tag">PostgreSQL</span>
+      </div>
+      <p class="entry-desc">
+        AI-driven mental health web platform offering 24/7 chatbot assistance and
+        anonymous peer forums. Built the full-stack system with authentication,
+        role-based access control, and secure storage of anonymized interactions.
+        Led creation of a detailed Software Design Specification covering architecture,
+        performance, reliability, and safety requirements.
+      </p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">SparkMatch</span>
+        <span class="entry-date">Mar 2026 – May 2026</span>
+      </div>
+      <div class="entry-links">
+        <a href="https://sparkmatch-production.up.railway.app" target="_blank">live ↗</a>
+        <a href="https://github.com/shortcut-jawad/SparkMatch" target="_blank">github ↗</a>
+      </div>
+      <div class="tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">Socket.IO</span>
+        <span class="tag">Express</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">WebRTC</span>
+        <span class="tag">Railway</span>
+      </div>
+      <p class="entry-desc">
+        Real-time stranger matchmaking platform that pairs online users instantly for live
+        video calls. Built a proximity-aware queue system using geolocation and Haversine
+        distance to prioritise nearby matches. Implemented peer-to-peer video via WebRTC
+        with ICE negotiation, and a full auth system with JWT, bcrypt, and profile
+        management including compressed image uploads.
+      </p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">ColorGrid</span>
+        <span class="entry-date">Mar 2025 – Apr 2025</span>
+      </div>
+      <div class="entry-links">
+        <a href="https://gridgame01.vercel.app/" target="_blank">live ↗</a>
+        <a href="https://github.com/shortcut-jawad/a3-shortcut-jawad-main" target="_blank">github ↗</a>
+      </div>
+      <div class="tags">
+        <span class="tag">TypeScript</span>
+        <span class="tag">Vite</span>
+        <span class="tag">Express</span>
+        <span class="tag">Socket.IO</span>
+        <span class="tag">MongoDB</span>
+      </div>
+      <p class="entry-desc">Competitive two-player real-time game where players expand colored regions on a
+        shared grid to practice strategic thinking and pattern recognition. Full-stack
+        architecture deployed via Vercel and Render, handling game state persistence and
+        real-time updates for multiple concurrent matches.
+      </p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Urdu News Classifier</span>
+        <span class="entry-date">Sep 2024 – Dec 2024</span>
+      </div>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">scikit-learn</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">NLP</span>
+      </div>
+      <p class="entry-desc">
+        Automated classifier for Urdu news articles, labeling topics such as sports and
+        entertainment. Scraped and preprocessed 1,000+ articles from local sources,
+        then implemented and compared multiple NLP models — covering text cleaning,
+        feature engineering, and model evaluation.
+      </p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">E-commerce Demand Forecasting</span>
+        <span class="entry-date">Sep 2024 – Dec 2024</span>
+      </div>
+      <div class="entry-links">
+        <a href="https://medium.com/@abdulrafey16504/pakistans-largest-e-commerce-dataset-e4c7a0aa0c04?postPublishedType=initial" target="_blank">article ↗</a>
+        <a href="https://github.com/Rafey16504/E-commerce-DataModel" target="_blank">github ↗</a>
+      </div>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">Random Forest</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">Matplotlib</span>
+      </div>
+      <p class="entry-desc">
+        Forecasted high-performing product categories using Pakistan's largest public
+        e-commerce dataset — hundreds of thousands of transaction records. Cleaned and
+        explored large-scale transactional data, engineered features, and trained Random
+        Forest models to identify top-performing categories and key demand drivers.
+      </p>
+    </div>
+
+  </section>
+
+  <hr>
+
+  <section>
+    <p class="section-label">skills</p>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <span class="skill-label">Languages</span>
+        <span class="skill-val">JavaScript / TypeScript · Python · C++</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Frontend</span>
+        <span class="skill-val">React.js · Next.js · HTML · CSS</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Backend</span>
+        <span class="skill-val">Node.js · REST APIs · Django · JWT · WebRTC · Multi-threading</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">Databases</span>
+        <span class="skill-val">MongoDB · PostgreSQL · SQL · Supabase</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">ML / Data</span>
+        <span class="skill-val">scikit-learn · Pandas · NumPy · Matplotlib</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-label">DevOps</span>
+        <span class="skill-val">Git · Vercel · Render · Railway · CI/CD · Docker · Kubernetes · SonarQube</span>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <section>
+    <p class="section-label">teaching</p>
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Teaching Assistant — LUMS</span>
+        <span class="entry-date">Sep 2023 – Feb 2026</span>
+      </div>
+      <p class="entry-desc">
+        Three TAships across Calculus I, Linear Algebra, and Probability (twice).
+        Led weekly tutorials for 40+ students, created and graded quizzes, and
+        invigilated exams for cohorts of ~180.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    Muhammad Jawad · <a href="mailto:jawad.shakeel2004@gmail.com">jawad.shakeel2004@gmail.com</a> · LUMS CS '26
+  </footer>
+
 </div>
-
-<!-- SUMMARY -->
-<div class="section">
-  <div class="section-title">Summary</div>
-  <p class="summary">
-    Full Stack Engineer graduating from LUMS in May 2026, with hands-on experience building production-ready web applications and data-driven systems. Developed interactive React/Next.js frontends and scalable Node.js backends with RESTful APIs, MongoDB, SQL, real-time Socket.IO systems, and WebRTC video. Applied machine learning to large datasets and taken projects end-to-end with CI/CD pipelines, Docker, and Kubernetes. Known for strong problem-solving skills, clean architecture, and effective collaboration in team environments.
-  </p>
-</div>
-
-<!-- EDUCATION -->
-<div class="section">
-  <div class="section-title">Education</div>
-  <div class="entry">
-    <div class="entry-head">
-      <span class="entry-left">Lahore University of Management Sciences (LUMS)</span>
-      <span class="entry-right">Aug 2022 – May 2026</span>
-    </div>
-    <div class="entry-sub">Bachelors of Science, Computer Science (BS CS), Minor in Mathematics &nbsp;·&nbsp; Lahore, Pakistan</div>
-  </div>
-</div>
-
-<!-- TEACHING -->
-<div class="section">
-  <div class="section-title">Teaching Experience</div>
-  <div class="entry">
-    <div class="entry-head">
-      <span class="entry-left">LUMS &nbsp;|&nbsp; <em>TAships</em></span>
-      <span class="entry-right">Sep 2023 – Feb 2026</span>
-    </div>
-    <ul>
-      <li>Completed three TAships (Calculus I, Linear Algebra, Probability twice), creating and grading quizzes, invigilating quizzes and exams for cohorts of ~180 students, leading weekly tutorials for 40+ students, and assisting the professor with course management and student queries via Slack, Piazza, email, and in-person office hours.</li>
-    </ul>
-  </div>
-</div>
-
-<!-- PROJECTS -->
-<div class="section">
-  <div class="section-title">Projects</div>
-
-  <div class="entry">
-    <div class="entry-head">
-      <span class="entry-left">Agentic Tool Harness (FYP) &nbsp;|&nbsp; <a href="http://46.225.10.148:9998" target="_blank">live ↗</a> &nbsp;|&nbsp; <a href="https://github.com/Usman-Sajid313/AgenticTestHarness_SPROJ" target="_blank">github ↗</a> &nbsp;|&nbsp; <em>LUMS</em></span>
-      <span class="entry-right">Sep 2025 – Feb 2026</span>
-    </div>
-    <ul>
-      <li>Addressed the lack of standardized evaluation for tool-using agents by building a sandboxed harness to test tool discovery, correct invocation, and multi-step reasoning on long-horizon tasks.</li>
-      <li>Engineered an introspection layer that logs tool calls, parameters, and decision traces for reproducible experiments; developed provider-agnostic pipelines supporting multiple LLM APIs with configurable scoring via Jest-style unit tests and LLM-based judges.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="entry-head">
-      <span class="entry-left">Serenely &nbsp;|&nbsp; <a href="https://se-gp-8-git-prod-umzs-projects.vercel.app/" target="_blank">live ↗</a> &nbsp;|&nbsp; <a href="https://github.com/Um3rz/Serenely" target="_blank">github ↗</a> &nbsp;|&nbsp; <em>LUMS</em></span>
-      <span class="entry-right">Sep 2025 – Dec 2025</span>
-    </div>
-    <ul>
-      <li>Designed an AI-driven mental health web platform to expand access to affordable support, offering 24/7 chatbot assistance and anonymous peer forums.</li>
-      <li>Built a full-stack system with React, Node.js/Django, and PostgreSQL, implementing authentication, role-based access control, and secure storage of anonymized interactions, and led creation of a detailed Software Design Specification to define architecture, performance, reliability, and safety requirements.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="entry-head">
-      <span class="entry-left">SparkMatch &nbsp;|&nbsp; <a href="https://sparkmatch-production.up.railway.app" target="_blank">live ↗</a> &nbsp;|&nbsp; <a href="https://github.com/shortcut-jawad/SparkMatch" target="_blank">github ↗</a></span>
-      <span class="entry-right">Mar 2026 – May 2026</span>
-    </div>
-    <ul>
-      <li>Built a real-time stranger matchmaking platform pairing online users for live video calls, implementing a proximity-aware queue using geolocation and Haversine distance to prioritise nearby matches.</li>
-      <li>Implemented peer-to-peer video via WebRTC with ICE negotiation and a full auth system with JWT and bcrypt; deployed on Railway with Socket.IO, Express, and MongoDB.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="entry-head">
-      <span class="entry-left">ColorGrid &nbsp;|&nbsp; <a href="https://gridgame01.vercel.app/" target="_blank">live ↗</a> &nbsp;|&nbsp; <a href="https://github.com/shortcut-jawad/a3-shortcut-jawad-main" target="_blank">github ↗</a> &nbsp;|&nbsp; <em>LUMS</em></span>
-      <span class="entry-right">Mar 2025 – Apr 2025</span>
-    </div>
-    <ul>
-      <li>Designed a competitive two-player game to practice strategic thinking and pattern recognition by expanding colored regions on a shared grid in real time.</li>
-      <li>Implemented a full-stack architecture with React, Vite, Node.js, and MongoDB, deployed via Vercel and Render, handling game state persistence and real-time updates for multiple concurrent matches.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="entry-head">
-      <span class="entry-left">Machine Learning Project &nbsp;|&nbsp; <em>LUMS</em></span>
-      <span class="entry-right">Sep 2024 – Dec 2024</span>
-    </div>
-    <ul>
-      <li>Targeted the lack of structured categorization for Urdu news by building an automated classifier to label articles into topics such as sports and entertainment.</li>
-      <li>Scraped and preprocessed 1,000+ articles from local sources, then implemented and compared multiple NLP models in Python (scikit-learn, Pandas, NumPy), gaining experience in text cleaning, feature engineering, and model evaluation.</li>
-    </ul>
-  </div>
-
-  <div class="entry">
-    <div class="entry-head">
-      <span class="entry-left">Data Science Project &nbsp;|&nbsp; <a href="https://github.com/Rafey16504/E-commerce-DataModel" target="_blank">github ↗</a> &nbsp;|&nbsp; <em>LUMS</em></span>
-      <span class="entry-right">Sep 2024 – Dec 2024</span>
-    </div>
-    <ul>
-      <li>Forecasted high-performing products in Pakistan's e-commerce market using Pakistan's largest public e-commerce dataset (hundreds of thousands of transaction records from Kaggle).</li>
-      <li>Cleaned and explored large-scale transactional data, engineered features, built visualizations, and trained Random Forest models in Python (Pandas, NumPy, Matplotlib, scikit-learn) to identify top-performing categories and key demand drivers.</li>
-    </ul>
-  </div>
-
-</div>
-
-<!-- SKILLS -->
-<div class="section">
-  <div class="section-title">Skills</div>
-  <div class="skill-row">
-    <span class="skill-label">Software Dev:</span>
-    <span>System Design, Algorithm Design, API Development, Debugging, Unit Testing, Agile Methodologies</span>
-  </div>
-  <div class="skill-row">
-    <span class="skill-label">Frontend:</span>
-    <span>HTML, CSS, JavaScript, TypeScript, React.js, Next.js</span>
-  </div>
-  <div class="skill-row">
-    <span class="skill-label">Backend &amp; DB:</span>
-    <span>Node.js, REST APIs, Django, JWT, WebRTC, Multi-threading, MongoDB, PostgreSQL, SQL, Supabase</span>
-  </div>
-  <div class="skill-row">
-    <span class="skill-label">Programming:</span>
-    <span>JavaScript / TypeScript, C++, Python</span>
-  </div>
-  <div class="skill-row">
-    <span class="skill-label">DevOps:</span>
-    <span>Git/GitHub, Vercel, Render, Railway, CI/CD, Docker, Kubernetes, SonarQube</span>
-  </div>
-</div>
-
 </body>
 </html>
